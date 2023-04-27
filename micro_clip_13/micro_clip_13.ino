@@ -66,13 +66,11 @@ void loop() {
   {
     Keyboard.release(' ');
   }
-  //Serial.println(read_current);
-  //Serial.println(counter);
+
   time_current = millis();
   if(read_previous==0 && read_current ==1)
   {
     
-    //Serial.println(read_current);
     counter += 1;
     if (counter==2){
       first_beat_time = millis();
@@ -84,10 +82,7 @@ void loop() {
       use=1;
     }
     
-    //if (counter==3){
-    //  Keyboard.write('1');
-    //  use=1;
-    //}
+ 
     read_previous=read_current;
     heart_rate=60000/(time_current-time_previous);
     Serial.println(heart_rate);
@@ -121,8 +116,6 @@ void sum()
   if(data_effect)
     {
       heart_rate=600000/(time_current-time_previous);//60*20*1000/20_total_time 
-      //Serial.print("Heart_rate_is:\t");
-      //Serial.println(heart_rate);
     }
     data_effect=1;//sign bit
 }
